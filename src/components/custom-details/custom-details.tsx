@@ -17,12 +17,15 @@ export class WebComponent {
     //*
     @Method()
     getDefaultKnobEPosition(): Anchor {
-        return Anchor.Left;
+        return 'left';
     }
     //*/
 }
-export enum Anchor {
-    Left = 'left',
-    Center = 'center',
-    Right = 'right',
-}
+/*
+workaround based Ionic component: range
+On the following file:
+https://github.com/ionic-team/ionic/blob/master/core/src/components/range/range-interface.ts
+it is used the following:
+export type Knob = 'A' | 'B' | undefined;
+*/
+export type Anchor = 'left' | 'center' | 'right';
